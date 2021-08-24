@@ -1,13 +1,9 @@
 class Bottles
   def verses(starting, ending)
-    result = []
-
-    while starting >= ending
-      result << verse(starting)
-      starting -=1
-    end
-
-    result.join("\n")
+    starting
+      .downto(ending)
+      .map { |number| verse(number) }
+      .join("\n")
   end
 
   def verse(number)
