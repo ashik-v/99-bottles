@@ -1,6 +1,60 @@
 gem 'rspec'
 require_relative 'bottles'
 
+# API
+# verse(n)
+# verses(a, b)
+# song
+
+RSpec.describe Bottles do
+  describe "#verse" do
+    it "generates the last verse" do
+      expected = <<~VERSE
+        99 bottles of beer on the wall, 99 bottles of beer.
+        Take one down and pass it around, 98 bottles of beer on the wall.
+      VERSE
+
+      result = Bottles.new.verse(99)
+
+      expect(result).to eq(expected)
+    end
+
+    it "generates another verse" do
+      expected = <<~VERSE
+        3 bottles of beer on the wall, 3 bottles of beer.
+        Take one down and pass it around, 2 bottles of beer on the wall.
+      VERSE
+
+      result = Bottles.new.verse(3)
+
+      expect(result).to eq(expected)
+    end
+
+    it "generates the second last verse" do
+      expected = <<~VERSE
+        2 bottles of beer on the wall, 2 bottles of beer.
+        Take one down and pass it around, 1 bottle of beer on the wall.
+      VERSE
+
+      result = Bottles.new.verse(2)
+
+      expect(result).to eq(expected)
+    end
+
+    it "generates the first verse" do
+      expected = <<~VERSE
+        1 bottle of beer on the wall, 1 bottle of beer.
+        Take it down and pass it around, no more bottles of beer on the wall.
+      VERSE
+
+      result = Bottles.new.verse(1)
+
+      expect(result).to eq(expected)
+    end
+
+  end
+end
+
 SONG = <<-SONG 
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
