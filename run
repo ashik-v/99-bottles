@@ -3,5 +3,5 @@
 trap "echo Exited!; exit;" SIGINT SIGTERM
 
 while true; do
-  ag -g '\.rb$' | entr -c -d -p -s 'rubocop bottles.rb; ruby *_test.rb'
+  ag -g '\.rb$' | entr -c -d -p -s 'rspec *_test.rb'
 done
