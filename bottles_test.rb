@@ -30,7 +30,7 @@ RSpec.describe Bottles do
       expect(result).to eq(expected)
     end
 
-    it "generates the second last verse" do
+    it "generates verse 2" do
       expected = <<~VERSE
         2 bottles of beer on the wall, 2 bottles of beer.
         Take one down and pass it around, 1 bottle of beer on the wall.
@@ -41,7 +41,7 @@ RSpec.describe Bottles do
       expect(result).to eq(expected)
     end
 
-    it "generates the first verse" do
+    it "generates verse 1" do
       expected = <<~VERSE
         1 bottle of beer on the wall, 1 bottle of beer.
         Take it down and pass it around, no more bottles of beer on the wall.
@@ -52,6 +52,16 @@ RSpec.describe Bottles do
       expect(result).to eq(expected)
     end
 
+    it "generates verse 0" do
+      expected = <<~VERSE
+        No more of beer on the wall, no more bottles of beer.
+        Go to the store and buy some more, 99 bottles of beer on the wall.
+      VERSE
+
+      result = Bottles.new.verse(0)
+
+      expect(result).to eq(expected)
+    end
   end
 end
 
