@@ -63,6 +63,22 @@ RSpec.describe Bottles do
       expect(result).to eq(expected)
     end
   end
+  describe "#verses" do
+    it "generates a couple of verses" do
+      expected = <<~VERSE
+        99 bottles of beer on the wall, 99 bottles of beer.
+        Take one down and pass it around, 98 bottles of beer on the wall.
+        
+        98 bottles of beer on the wall, 98 bottles of beer.
+        Take one down and pass it around, 97 bottles of beer on the wall.
+      VERSE
+
+
+      result = Bottles.new.verses(99, 98)
+
+      expect(result).to eq(expected)
+    end
+  end
 end
 
 SONG = <<-SONG 
