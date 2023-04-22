@@ -1,4 +1,15 @@
 class Bottles
+  def song
+    verses(99, 0)
+  end
+
+  def verses(upper, lower)
+    upper
+      .downto(lower)
+      .map(&method(:verse))
+      .join("\n")
+  end
+
   def verse(number)
     case number
     when 2
@@ -14,16 +25,5 @@ class Bottles
      "#{number} bottles of beer on the wall, #{number} bottles of beer." + "\n" +
       "Take one down and pass it around, #{number-1} bottles of beer on the wall.\n"
     end
-  end
-
-  def verses(upper, lower)
-    upper
-      .downto(lower)
-      .map(&method(:verse))
-      .join("\n")
-  end
-
-  def song
-    verses(99, 0)
   end
 end

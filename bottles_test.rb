@@ -96,7 +96,6 @@ RSpec.describe Bottles do
       expect(result).to eq(expected)
     end
   end
-
   describe "#song" do
     it "generates the whole song" do
       expected = <<~SONG
