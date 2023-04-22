@@ -8,7 +8,7 @@ class Bottles
       "1 bottle of beer on the wall, 1 bottle of beer." + "\n" +
         "Take it down and pass it around, no more bottles of beer on the wall.\n"
     when 0
-      "No more of beer on the wall, no more bottles of beer." + "\n" +
+      "No more bottles of beer on the wall, no more bottles of beer." + "\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     else
      "#{number} bottles of beer on the wall, #{number} bottles of beer." + "\n" +
@@ -16,7 +16,10 @@ class Bottles
     end
   end
 
-  def verses(_, _)
-    verse(99) + "\n" + verse(98)
+  def verses(upper, lower)
+    upper
+      .downto(lower)
+      .map(&method(:verse))
+      .join("\n")
   end
 end
