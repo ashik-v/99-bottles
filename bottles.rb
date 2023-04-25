@@ -14,4 +14,11 @@ class Bottles
         "Take one down and pass it around, #{number - 1} bottles of beer on the wall.\n"
     end
   end
+
+  def verses(upper, lower)
+    upper
+      .downto(lower)
+      .map(&method(:verse))
+      .join("\n")
+  end
 end
