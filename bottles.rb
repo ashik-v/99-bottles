@@ -26,4 +26,10 @@ class Bottles
       "Take one down and pass it around, #{number-1} bottles of beer on the wall.\n"
     end
   end
+
+  private
+
+  def container
+
+  end
 end
