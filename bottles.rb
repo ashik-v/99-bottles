@@ -30,6 +30,6 @@ class Bottles
   private
 
   def container
-
+    "bottles"
   end
 end
