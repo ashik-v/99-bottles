@@ -19,6 +19,9 @@ class Bottles
      "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer." + "\n" +
       "#{action(number)}, #{quantity(successor(number))} #{container(number - 1)} of beer on the wall.\n"
     end
+
+    "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer." + "\n" +
+      "#{action(number)}, #{quantity(successor(number))} #{container(number - 1)} of beer on the wall.\n"
   end
 
   private
