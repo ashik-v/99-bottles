@@ -24,11 +24,7 @@ class BottleNumber
   end
 
   def pronoun
-    if number == 1
-      "it"
-    else
-      "one"
-    end
+    "one"
   end
 
   def to_s
@@ -47,5 +43,11 @@ class BottleNumber0 < BottleNumber
 
   def action
     "Go to the store and buy some more"
+  end
+end
+
+class BottleNumber1 < BottleNumber
+  def pronoun
+    "it"
   end
 end
