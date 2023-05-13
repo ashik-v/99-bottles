@@ -47,3 +47,17 @@ class BottleNumber
     "#{quantity} #{container}"
   end
 end
+
+class BottleNumber0 < BottleNumber
+  def quantity
+    "no more"
+  end
+
+  def successor
+    99
+  end
+
+  def action
+    "Go to the store and buy some more"
+  end
+end
