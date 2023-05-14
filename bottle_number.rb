@@ -46,7 +46,7 @@ class BottleNumber0 < BottleNumber
   end
 
   def successor
-    99
+    BottleNumber.for(99)
   end
 
   def action
