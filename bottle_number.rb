@@ -8,11 +8,7 @@ class BottleNumber
   end
 
   def container
-    if number == 1
-      "bottle"
-    else
-      "bottles"
-    end
+    "bottles"
   end
 
   def action
@@ -24,11 +20,7 @@ class BottleNumber
   end
 
   def pronoun
-    if number == 1
-      "it"
-    else
-      "one"
-    end
+    "one"
   end
 
   def to_s
@@ -47,5 +39,15 @@ class BottleNumber0 < BottleNumber
 
   def successor
     99
+  end
+end
+
+class BottleNumber1 < BottleNumber
+  def container
+    "bottle"
+  end
+
+  def pronoun
+    "it"
   end
 end
