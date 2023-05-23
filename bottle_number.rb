@@ -1,7 +1,7 @@
 class BottleNumber
   attr_reader :number
 
-  def self.bottle_number_for(number)
+  def self.for(number)
     case number
     when 0
       BottleNumber0
