@@ -13,8 +13,9 @@ class Bottles
   end
 
   def verse(number)
-    bottle_number = BottleNumber.new(number)
-    next_bottle_number = BottleNumber.new(bottle_number.successor)
+    bottle_number = (number == 0 ? BottleNumber0 : BottleNumber).new(number)
+    successor = bottle_number.successor
+    next_bottle_number = (successor == 0 ? BottleNumber0 : BottleNumber).new(successor)
 
      "#{bottle_number}".capitalize + " of beer on the wall, " +
        "#{bottle_number}" + " of beer.\n" +
