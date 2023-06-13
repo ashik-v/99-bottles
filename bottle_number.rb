@@ -9,12 +9,8 @@ class BottleNumber
     @registry ||= [BottleNumber]
   end
 
-  def self.register(candidate)
-    registry.prepend(candidate)
-  end
-
   def self.inherited(candidate)
-    register(candidate)
+    registry.prepend(candidate)
   end
 
   def self.handles?(number)
