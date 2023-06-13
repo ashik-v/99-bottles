@@ -2,7 +2,11 @@ class BottleNumber
   attr_reader :number
 
   def self.for(number)
-    [BottleNumber6, BottleNumber1, BottleNumber0, BottleNumber].find{ |bottle_number| bottle_number.handles?(number) }.new(number)
+    registry.find{ |bottle_number| bottle_number.handles?(number) }.new(number)
+  end
+
+  def self.registry
+    [BottleNumber6, BottleNumber1, BottleNumber0, BottleNumber]
   end
 
   def self.handles?(number)
