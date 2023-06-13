@@ -2,11 +2,15 @@ class BottleNumber
   attr_reader :number
 
   def self.for(number)
-    registry.find{ |bottle_number| bottle_number.handles?(number) }.new(number)
+    registry.find{ |candidate| candidate.handles?(number) }.new(number)
   end
 
   def self.registry
-    [BottleNumber6, BottleNumber1, BottleNumber0, BottleNumber]
+    @registry ||= []
+  end
+
+  def self.register(candidate)
+    registry.prepend(candidate)
   end
 
   def self.handles?(number)
@@ -39,9 +43,13 @@ class BottleNumber
   def to_s
     "#{quantity} #{container}"
   end
+
+  BottleNumber.register(self)
 end
 
 class BottleNumber0 < BottleNumber
+  BottleNumber.register(self)
+
   def self.handles?(number)
     number == 0
   end
@@ -60,6 +68,8 @@ class BottleNumber0 < BottleNumber
 end
 
 class BottleNumber1 < BottleNumber
+  BottleNumber.register(self)
+
   def self.handles?(number)
     number == 1
   end
@@ -74,6 +84,8 @@ class BottleNumber1 < BottleNumber
 end
 
 class BottleNumber6 < BottleNumber
+  BottleNumber.register(self)
+
   def self.handles?(number)
     number == 6
   end
