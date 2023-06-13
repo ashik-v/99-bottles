@@ -6,7 +6,7 @@ class BottleNumber
   end
 
   def self.registry
-    @registry ||= []
+    @registry ||= [BottleNumber]
   end
 
   def self.register(candidate)
@@ -43,8 +43,6 @@ class BottleNumber
   def to_s
     "#{quantity} #{container}"
   end
-
-  BottleNumber.register(self)
 end
 
 class BottleNumber0 < BottleNumber
