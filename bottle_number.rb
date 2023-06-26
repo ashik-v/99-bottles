@@ -2,11 +2,9 @@ class BottleNumber
   attr_reader :number
 
   def self.for(number)
-    begin
-      const_get("BottleNumber#{number}")
-    rescue NameError
-      BottleNumber
-    end.new(number)
+    const_get("BottleNumber#{number}").new(number)
+  rescue NameError
+    BottleNumber.new(number)
   end
 
   def initialize(number)
