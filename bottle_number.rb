@@ -1,10 +1,14 @@
 class BottleNumber
-  attr_reader :number
+  attr_reader :number, :registry
 
   def self.for(number)
-    [BottleNumber0,
-    BottleNumber1,
-    BottleNumber6, BottleNumber].find{ |candidate| candidate.handles?(number)}.new(number)
+    registry.find{ |candidate| candidate.handles?(number)}.new(number)
+  end
+
+  def self.registry
+    @registry ||= [BottleNumber0,
+     BottleNumber1,
+     BottleNumber6, BottleNumber]
   end
 
   def initialize(number)
