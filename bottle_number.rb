@@ -6,7 +6,7 @@ class BottleNumber
   end
 
   def self.registry
-    @registry ||= []
+    @registry ||= [BottleNumber]
   end
 
   def self.inherited(candidate)
@@ -48,8 +48,6 @@ class BottleNumber
   def to_s
     "#{quantity} #{container}"
   end
-
-  register(self)
 end
 
 class BottleNumber0 < BottleNumber
