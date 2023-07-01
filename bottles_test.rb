@@ -63,6 +63,29 @@ describe "#verse" do
   end
 end
 
+describe "#verses" do
+  it "generates some verses" do
+    expected = <<~VERSE
+      99 bottles of beer on the wall, 99 bottles of beer.
+      Take one down and pass it around, 98 bottles of beer on the wall.
+
+      98 bottles of beer on the wall, 98 bottles of beer.
+      Take one down and pass it around, 97 bottles of beer on the wall.
+    VERSE
+
+    result = Bottles.new.verses(99, 98)
+
+    expect(result).to eq(expected)
+  end
+
+  it "generates a few other verses" do
+  end
+end
+
+describe "#song" do
+
+end
+
 SONG = <<-SONG 
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
