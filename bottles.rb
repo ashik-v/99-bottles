@@ -22,4 +22,8 @@ class Bottles
       .map(&method(:verse))
       .join("\n")
   end
+
+  def song
+    verses(99, 0)
+  end
 end
