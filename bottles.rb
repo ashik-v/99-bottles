@@ -16,7 +16,14 @@ class Bottles
     end
   end
 
-  def verses(_, _)
+  def verses(upper, lower)
+    i = upper
+    result = []
+    while i >= lower
+      result << verse(i)
+      i = i -1
+    end
 
+    result.join("\n")
   end
 end
