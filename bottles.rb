@@ -17,11 +17,10 @@ class Bottles
   end
 
   def verses(upper, lower)
-    i = upper
     result = []
-    while i >= lower
-      result << verse(i)
-      i = i -1
+    range = upper.downto(lower)
+    range.each do |number|
+      result << verse(number)
     end
 
     result.join("\n")
