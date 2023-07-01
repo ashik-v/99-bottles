@@ -39,6 +39,17 @@ describe "#verse" do
 
     expect(result).to eq(expected)
   end
+
+  it "generates verse 1" do
+    expected = <<~VERSE
+      1 bottle of beer on the wall, 1 bottle of beer.
+      Take it down and pass it around, no more bottles of beer on the wall.
+    VERSE
+
+    result = Bottles.new.verse(1)
+
+    expect(result).to eq(expected)
+  end
 end
 
 SONG = <<-SONG 
