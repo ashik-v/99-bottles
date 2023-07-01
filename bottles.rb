@@ -17,12 +17,9 @@ class Bottles
   end
 
   def verses(upper, lower)
-    result = []
     range = upper.downto(lower)
-    range.each do |number|
-      result << verse(number)
-    end
-
-    result.join("\n")
+    range.map do |number|
+      verse(number)
+    end.join("\n")
   end
 end
