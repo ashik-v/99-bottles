@@ -17,6 +17,17 @@ Take one down and pass it around, 98 bottles of beer on the wall.
 
     expect(result).to eq(expected)
   end
+
+  it "generates another verse" do
+    expected = <<~VERSE
+98 bottles of beer on the wall, 98 bottles of beer.
+Take one down and pass it around, 97 bottles of beer on the wall.
+    VERSE
+
+    result = Bottles.new.verse(98)
+
+    expect(result).to eq(expected)
+  end
 end
 
 SONG = <<-SONG 
