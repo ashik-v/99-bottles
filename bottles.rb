@@ -4,6 +4,19 @@ class Bottles
       "#{action(number)}, #{quantity(successor(number))} #{container(number - 1)} of beer on the wall.\n"
   end
 
+  def verses(upper, lower)
+    upper
+      .downto(lower)
+      .map(&method(:verse))
+      .join("\n")
+  end
+
+  def song
+    verses(99, 0)
+  end
+
+  private
+
   def action(number)
     if number == 0
       "Go to the store and buy some more"
@@ -42,16 +55,5 @@ class Bottles
     else
       number - 1
     end
-  end
-
-  def verses(upper, lower)
-    upper
-      .downto(lower)
-      .map(&method(:verse))
-      .join("\n")
-  end
-
-  def song
-    verses(99, 0)
   end
 end
