@@ -4,8 +4,10 @@ class Bottles
   def verse(number)
     bottle_number = BottleNumber.for(number)
 
-    "#{bottle_number.quantity.capitalize} #{bottle_number.container} of beer on the wall, #{bottle_number.quantity} #{bottle_number.container} of beer." + "\n" +
-      "#{bottle_number.action}, #{bottle_number.successor.quantity} #{bottle_number.successor.container} of beer on the wall.\n"
+    "#{bottle_number} of beer on the wall, ".capitalize +
+      "#{bottle_number} of beer.\n" +
+      "#{bottle_number.action}, " +
+      "#{bottle_number.successor} of beer on the wall.\n"
   end
 
   def verses(upper, lower)

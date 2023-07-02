@@ -35,6 +35,10 @@ class BottleNumber
   def successor
     BottleNumber.for(number - 1)
   end
+
+  def to_s
+    "#{quantity} #{container}"
+  end
 end
 
 class BottleNumber0 < BottleNumber
