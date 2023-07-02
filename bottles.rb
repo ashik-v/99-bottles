@@ -20,22 +20,22 @@ class Bottles
   private
 
   def action(number)
-    BottleNumber.new(number).action(number)
+    BottleNumber.new(number).action
   end
 
   def quantity(number)
-    BottleNumber.new(number).quantity(number)
+    BottleNumber.new(number).quantity
   end
 
   def container(number)
-    BottleNumber.new(number).container(number)
+    BottleNumber.new(number).container
   end
 
   def pronoun(number)
-    BottleNumber.new(number).pronoun(number)
+    BottleNumber.new(number).pronoun
   end
 
   def successor(number)
-    BottleNumber.new(number).successor(number)
+    BottleNumber.new(number).successor
   end
 end
