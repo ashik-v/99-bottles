@@ -5,12 +5,12 @@ class Bottles
       "No more bottles of beer on the wall, no more bottles of beer." + "\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     else
-      "#{number} #{quantity(number)} of beer on the wall, #{number} #{quantity(number)} of beer." + "\n" +
-        "Take #{pronoun(number)} down and pass it around, #{successor(number)} #{quantity(number - 1)} of beer on the wall.\n"
+      "#{number} #{container(number)} of beer on the wall, #{number} #{container(number)} of beer." + "\n" +
+        "Take #{pronoun(number)} down and pass it around, #{successor(number)} #{container(number - 1)} of beer on the wall.\n"
     end
   end
 
-  def quantity(number)
+  def container(number)
     if number == 1
       "bottle"
     else
