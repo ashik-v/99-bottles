@@ -56,6 +56,17 @@ describe "#verse" do
 
     expect(result).to eq(expected)
   end
+
+  it "generate verse 6 with 6-pack" do
+    expected = <<~VERSE
+      1 six-pack of beer on the wall, 1 six-pack of beer.
+      Take one down and pass it around, 5 bottles of beer on the wall.
+    VERSE
+
+    result = Bottles.new.verse(6)
+
+    expect(result).to eq(expected)
+  end
 end
 
 describe "#verses" do
@@ -371,9 +382,9 @@ describe "#song" do
       Take one down and pass it around, 7 bottles of beer on the wall.
       
       7 bottles of beer on the wall, 7 bottles of beer.
-      Take one down and pass it around, 6 bottles of beer on the wall.
+      Take one down and pass it around, 1 six-pack of beer on the wall.
       
-      6 bottles of beer on the wall, 6 bottles of beer.
+      1 six-pack of beer on the wall, 1 six-pack of beer.
       Take one down and pass it around, 5 bottles of beer on the wall.
       
       5 bottles of beer on the wall, 5 bottles of beer.
