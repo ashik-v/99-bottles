@@ -2,11 +2,13 @@ class BottleNumber
   attr_reader :number
 
   def self.for(number)
-    candidates = [BottleNumber6, BottleNumber1, BottleNumber0, BottleNumber]
-
-    candidates.find do |candidate|
+    registry.find do |candidate|
       candidate.handles?(number)
     end.new(number)
+  end
+
+  def self.registry
+    [BottleNumber6, BottleNumber1, BottleNumber0, BottleNumber]
   end
 
   def self.handles?(number)
