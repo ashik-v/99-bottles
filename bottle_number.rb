@@ -2,12 +2,9 @@ class BottleNumber
   attr_reader :number
 
   def self.for(number)
-    case number
-    when 0
-      BottleNumber0
-    when 1
-      BottleNumber1
-    else
+    begin
+      const_get("BottleNumber#{number}")
+    rescue
       BottleNumber
     end.new(number)
   end
