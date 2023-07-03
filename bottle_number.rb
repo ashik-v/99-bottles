@@ -2,11 +2,15 @@ class BottleNumber
   attr_reader :number
 
   def self.for(number)
-    begin
-      const_get("BottleNumber#{number}")
-    rescue
-      BottleNumber
+    candidates = [BottleNumber6, BottleNumber1, BottleNumber0, BottleNumber]
+
+    candidates.find do |candidate|
+      candidate.handles?(number)
     end.new(number)
+  end
+
+  def self.handles?(number)
+    true
   end
 
   def initialize(number)
@@ -39,6 +43,10 @@ class BottleNumber
 end
 
 class BottleNumber0 < BottleNumber
+  def self.handles?(number)
+    number == 0
+  end
+
   def action
     "Go to the store and buy some more"
   end
@@ -53,6 +61,10 @@ class BottleNumber0 < BottleNumber
 end
 
 class BottleNumber1 < BottleNumber
+  def self.handles?(number)
+    number == 1
+  end
+
   def container
     "bottle"
   end
@@ -63,6 +75,10 @@ class BottleNumber1 < BottleNumber
 end
 
 class BottleNumber6 < BottleNumber
+  def self.handles?(number)
+    number == 6
+  end
+
   def container
     "six-pack"
   end
