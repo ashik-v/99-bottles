@@ -1,4 +1,5 @@
 require_relative 'bottle_number'
+require_relative 'bottle_verse'
 
 class Bottles
   def song
@@ -13,11 +14,6 @@ class Bottles
   end
 
   def verse(number)
-    bottle_number = BottleNumber.for(number)
-
-    "#{bottle_number}".capitalize + " of beer on the wall, " +
-       "#{bottle_number}" + " of beer.\n" +
-       "#{bottle_number.action}, " +
-       "#{bottle_number.successor}"+" of beer on the wall.\n"
+    BottleVerse.new(number).verse
   end
 end
